@@ -1,11 +1,11 @@
 # Use a Node.js base image
-FROM --platform=linux/amd64 node:20.14
+FROM --platform=linux/amd64 node:22.23.4-slim
 
 # Set the working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY ./package.json ./package-lock.json ./
+COPY ./package.json ./package-lock.json ./.npmrc ./
 
 # Install dependencies
 RUN npm install
